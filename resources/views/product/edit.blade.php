@@ -51,6 +51,31 @@
                                 @endforeach
                             </select>
                         </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Product Code</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product Code"
+                                name="product_code" value="{{ $products->product_code }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Description</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Description"
+                                name="description" value="{{ $products->description }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Price</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Price"
+                                name="price" value="{{ $products->price }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Unit</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Unit"
+                                name="unit" value="{{ $products->unit }}">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Stock</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Stock"
+                                name="stock" value="{{ $products->stock }}">
+                        </div>
                     </div>
                     <!-- /.card-body -->
 

@@ -15,6 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('category_id');
+            $table->string('product_code');
+            $table->string('description');
+            $table->integer('price')->default(0);
+            $table->string('unit')->nullable();
+            $table->integer('stock')->default(0);
             $table->timestamps();
         });
     }

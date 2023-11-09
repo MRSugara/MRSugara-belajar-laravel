@@ -33,6 +33,11 @@
                                 <th style="width: 10px">#</th>
                                 <th>Name</th>
                                 <th>Category</th>
+                                <th>Product Code</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Unit</th>
+                                <th>Stock</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -42,6 +47,13 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $product->name }}</td>
                                     <td>{{ $product->category->name }}</td>
+                                    <td>{{ $product->product_code }}</td>
+                                    <td>{{ $product->description }}</td>
+                                    <td>${{ $product->price }}</td>
+                                    <td>{{ $product->unit }}</td>
+                                    <td>{{ $product->stock }}</td>
+
+
                                     <td>
                                         <a href="{{ route('product.edit', ['id' => $product->id]) }}"
                                             class="badge bg-warning"><i class="nav-icon fas fa-edit"></i></span></a>

@@ -36,7 +36,12 @@ class ProductController extends Controller
 
         $products = Product::create([
             'name'=>$request->name,
-            'category_id'=>$request->category
+            'category_id'=>$request->category,
+            'product_code'=>$request->product_code,
+            'description'=>$request->description,
+            'price'=>$request->price,
+            'unit'=>$request->unit,
+            'stock'=>$request->stock,
         ]);
         return redirect('/product');
     }
@@ -66,7 +71,12 @@ class ProductController extends Controller
     {
         $products = Product::where( 'id',$id)->update([
             'name'=>$request->name,
-            'category_id'=>$request->category
+            'category_id'=>$request->category,
+            'product_code'=>$request->product_code,
+            'description'=>$request->description,
+            'price'=>$request->price,
+            'unit'=>$request->unit,
+            'stock'=>$request->stock,
         ]);
         return redirect('/product');
     }

@@ -35,8 +35,8 @@
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Product</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Product name"
+                            <label for="Product">Product</label>
+                            <input type="text" class="form-control" id="Product" placeholder="Product name"
                                 name="name">
                         </div>
                         <div class="form-group">
@@ -47,6 +47,28 @@
                                     <option value="{{ $data->id }}">{{ $data->name }}</option>
                                 @endforeach
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="product_code">Product Code</label>
+                            <input type="text" class="form-control" id="product_code" placeholder="Product Code"
+                                name="product_code">
+                        </div>
+                        <div class="form-group">
+                            <label for="Description">Description</label>
+                            <input type="text" class="form-control" id="Description" placeholder="Description"
+                                name="description">
+                        </div>
+                        <div class="form-group">
+                            <label for="Price">Price</label>
+                            <input type="text" class="form-control" id="Price" placeholder="Price" name="price">
+                        </div>
+                        <div class="form-group">
+                            <label for="Unit">Unit</label>
+                            <input type="text" class="form-control" id="Unit" placeholder="Unit" name="unit">
+                        </div>
+                        <div class="form-group">
+                            <label for="Stock">Stock</label>
+                            <input type="text" class="form-control" id="Stock" placeholder="Stock" name="stock">
                         </div>
                     </div>
                     <!-- /.card-body -->
