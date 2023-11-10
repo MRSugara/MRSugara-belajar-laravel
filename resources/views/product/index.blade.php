@@ -56,7 +56,7 @@
 
                                     <td>
                                         <a href="{{ route('product.edit', ['id' => $product->id]) }}"
-                                            class="badge bg-warning"><i class="nav-icon fas fa-edit"></i></span></a>
+                                            class="badge bg-warning"><i class="nav-icon far fa-edit"></i></span></a>
                                         <a href="/product/delete/{{ $product->id }}" class="badge bg-danger"><i
                                                 class="nav-icon fas fa-trash"></i></a>
                                     </td>
