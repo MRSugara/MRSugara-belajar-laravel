@@ -21,9 +21,26 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <a href="{{ route('category.create') }}">
-                <button class="btn btn-primary mb-2">Create</button>
-            </a>
+            <div class="card col-3 mb-3">
+                <form action="{{ route('category.store') }}" method="POST">
+                    @csrf
+                    <div class="card-body ">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Create Category</label>
+                            <div class="d-flex justify-content-between">
+
+                                <input type="text" class="form-control mx-1" id="exampleInputEmail1" placeholder="name"
+                                    name="name">
+                                <button type="submit" class="btn btn-primary mx-1">Submit</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <!-- /.card-body -->
+                </form>
+            </div>
+
             <div class="card">
                 <!-- /.card-header -->
                 <div class="card-body">

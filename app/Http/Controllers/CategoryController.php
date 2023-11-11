@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function index(){
         $category = Category::all();
-        return view('category.index',compact('category'));
+        return view('category.index',compact('category'),['judul'=>'Category']);
     }
     public function create(){
         return view('category.create');
@@ -23,7 +23,7 @@ class CategoryController extends Controller
     }
     public function edit($id){
         $category = Category::find($id);
-        return view('category.edit',compact('category'));
+        return view('category.edit',compact('category'),['judul'=>'Category']);
     }
     public function update($id, Request $request){
         $category = Category::where('id', $id)->update([

@@ -16,7 +16,7 @@ class ProductController extends Controller
     {
         $products = Product::all();
         $categories = Category::all();
-        return view('product.index', compact('products','categories'));
+        return view('product.index', compact('products','categories'),['judul'=>'Product']);
     }
 
     /**
@@ -25,7 +25,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('product.create',compact('categories'));
+        return view('product.create',compact('categories'),['judul'=>'Product']);
     }
 
     /**
@@ -61,7 +61,7 @@ class ProductController extends Controller
     {
         $products = Product::find($id);
         $categories = Category::all();
-        return view('product.edit',compact('products','categories'));
+        return view('product.edit',compact('products','categories'),['judul'=>'Product']);
     }
 
     /**
