@@ -31,7 +31,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('product.store') }}" method="POST">
+                <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
@@ -69,6 +69,10 @@
                         <div class="form-group">
                             <label for="Stock">Stock</label>
                             <input type="text" class="form-control" id="Stock" placeholder="Stock" name="stock">
+                        </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Multiple files input example</label>
+                            <input class="form-control" type="file" id="image" name="image">
                         </div>
                     </div>
                     <!-- /.card-body -->

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('price')->default(0);
             $table->string('unit')->nullable();
             $table->integer('stock')->default(0);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

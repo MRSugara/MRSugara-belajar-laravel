@@ -59,9 +59,10 @@
                                     <td>{{ $data->name }}</td>
                                     <td>
                                         <a href="{{ route('category.edit', ['id' => $data->id]) }}"
-                                            class="badge bg-warning"><i class="nav-icon fas fa-edit"></i></span></a>
-                                        <a href="/category/delete/{{ $data->id }}" class="badge bg-danger"><i
-                                                class="nav-icon fas fa-trash"></i></a>
+                                            class="badge bg-warning"><span data-feather="edit"
+                                                width="17px"height="17px"></span></a>
+                                        <a href="/category/delete/{{ $data->id }}" class="badge bg-danger"><span
+                                                data-feather="trash-2" width="17px"height="17px"></span></a>
                                     </td>
                                 </tr>
                             @endforeach

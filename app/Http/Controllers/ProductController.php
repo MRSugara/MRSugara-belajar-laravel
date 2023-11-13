@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -33,6 +34,9 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        $imageName = time() . '.' . $request->image->extension();
+
+        Storage::putFileAs('image', $request->image, $imageName);
 
         $products = Product::create([
             'name'=>$request->name,
@@ -42,7 +46,9 @@ class ProductController extends Controller
             'price'=>$request->price,
             'unit'=>$request->unit,
             'stock'=>$request->stock,
+            'image'=>$imageName
         ]);
+
         return redirect('/product');
     }
 
@@ -69,6 +75,27 @@ class ProductController extends Controller
      */
     public function update($id, Request $request)
     {
+        if ($request->hasFile('image')) {
+        $old_image = Product::find($id)->image;
+
+        Storage::delete('image/'.$old_image);
+
+        $imageName = time() . '.' . $request->image->extension();
+
+        Storage::putFileAs('image', $request->image, $imageName);
+
+        $products = Product::where( 'id',$id)->update([
+        'name'=>$request->name,
+        'category_id'=>$request->category,
+        'product_code'=>$request->product_code,
+        'description'=>$request->description,
+        'price'=>$request->price,
+        'unit'=>$request->unit,
+        'stock'=>$request->stock,
+        'image'=>$imageName
+        ]);
+}
+    else {
         $products = Product::where( 'id',$id)->update([
             'name'=>$request->name,
             'category_id'=>$request->category,
@@ -78,6 +105,7 @@ class ProductController extends Controller
             'unit'=>$request->unit,
             'stock'=>$request->stock,
         ]);
+    }
         return redirect('/product');
     }
 

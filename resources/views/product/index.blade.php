@@ -38,6 +38,7 @@
                                 <th>Price</th>
                                 <th>Unit</th>
                                 <th>Stock</th>
+                                <th>Image</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -52,13 +53,24 @@
                                     <td>${{ $product->price }}</td>
                                     <td>{{ $product->unit }}</td>
                                     <td>{{ $product->stock }}</td>
+                                    @if ($product->image)
+                                        <td>
+                                            <img src="{{ asset('storage/image/' . $product->image) }}"
+                                                alt="{{ $product->name }}" style="max-width: 50px">
+                                        </td>
+                                    @else
+                                        <td>Tidak ada gambar</td>
+                                    @endif
+
+
 
 
                                     <td>
                                         <a href="{{ route('product.edit', ['id' => $product->id]) }}"
-                                            class="badge bg-warning"><i class="nav-icon far fa-edit"></i></span></a>
-                                        <a href="/product/delete/{{ $product->id }}" class="badge bg-danger"><i
-                                                class="nav-icon fas fa-trash"></i></a>
+                                            class="badge bg-warning"><span data-feather="edit" width="17px"
+                                                height="17px"></span> </a>
+                                        <a href="/product/delete/{{ $product->id }}" class="badge bg-danger"><span
+                                                data-feather="trash-2" width="17px"height="17px"></span></a>
                                     </td>
                                 </tr>
                             @endforeach
