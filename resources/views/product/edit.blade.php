@@ -31,7 +31,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form action="{{ route('product.update', $products->id) }}" method="POST">
+                <form action="{{ route('product.update', $products->id) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="card-body">
@@ -76,17 +76,10 @@
                             <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Stock"
                                 name="stock" value="{{ $products->stock }}">
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputFile">Image</label>
-                            <div class="input-group">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="exampleInputFile" name="image">
-                                    <label class="custom-file-label" for="exampleInputFile">{{ $product->image }}</label>
-                                </div>
-                                <div class="input-group-append">
-                                    <span class="input-group-text">Upload</span>
-                                </div>
-                            </div>
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Multiple files input example</label>
+                            <input class="form-control" type="file" id="image" name="image"
+                                value="{{ $products->image }}">
                         </div>
                     </div>
                     <!-- /.card-body -->
