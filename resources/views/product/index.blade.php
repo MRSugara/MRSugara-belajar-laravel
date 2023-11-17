@@ -66,11 +66,19 @@
 
 
                                     <td>
-                                        <a href="{{ route('product.edit', ['id' => $product->id]) }}"
-                                            class="badge bg-warning"><span data-feather="edit" width="17px"
-                                                height="17px"></span> </a>
-                                        <a href="/product/delete/{{ $product->id }}" class="badge bg-danger"><span
-                                                data-feather="trash-2" width="17px"height="17px"></span></a>
+
+                                        <form action="{{ route('product.destroy', ['id' => $product->id]) }}"
+                                            method="post">
+                                            <a href="{{ route('product.edit', ['id' => $product->id]) }}"
+                                                class="btn btn-warning btn-sm"
+                                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"><span
+                                                    data-feather="edit" width="17px" height="17px"></span> </a>
+                                            @csrf
+                                            <button class="btn btn-danger btn-sm"
+                                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"><span
+                                                    data-feather="trash-2" width="17px"height="17px"></span></button>
+                                        </form>
+
                                     </td>
                                 </tr>
                             @endforeach

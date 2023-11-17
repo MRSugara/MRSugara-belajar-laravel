@@ -58,11 +58,16 @@
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $data->name }}</td>
                                     <td>
-                                        <a href="{{ route('category.edit', ['id' => $data->id]) }}"
-                                            class="badge bg-warning"><span data-feather="edit"
-                                                width="17px"height="17px"></span></a>
-                                        <a href="/category/delete/{{ $data->id }}" class="badge bg-danger"><span
-                                                data-feather="trash-2" width="17px"height="17px"></span></a>
+                                        <form action="{{ route('category.destroy', ['id' => $data->id]) }}" method="post">
+                                            <a href="{{ route('category.edit', ['id' => $data->id]) }}"
+                                                class="btn btn-warning btn-sm"
+                                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"><span
+                                                    data-feather="edit" width="17px" height="17px"></span> </a>
+                                            @csrf
+                                            <button class="btn btn-danger btn-sm"
+                                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"><span
+                                                    data-feather="trash-2" width="17px"height="17px"></span></button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach
