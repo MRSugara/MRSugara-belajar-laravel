@@ -22,4 +22,13 @@ class Product extends Model
     public function Category(){
         return $this->belongsTo(Category::class);
     }
+    public function PurchaseDetail(){
+        return $this->hasMany(PurchaseDetail::class);
+    }
+    public function SaleDetail(){
+        return $this->belongsTo(SaleDetail::class);
+    }
+    public function ProductCirculation(){
+        return $this->belongsTo(ProductCirculation::class);
+    }
 }
