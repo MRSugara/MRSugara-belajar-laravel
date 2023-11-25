@@ -40,7 +40,7 @@
         <!-- Messages Dropdown Menu -->
         <div class="navbar-nav ">
             <div class="nav-item text-nowrap">
-                <form class="nav-link px-3 " action="/logout" method="POST">
+                <form class="nav-link px-3 " action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button type="submit" class="dropdown-item">Sign out</button>
                 </form>

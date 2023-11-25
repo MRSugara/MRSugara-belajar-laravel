@@ -37,10 +37,14 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Category</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Category name"
+                            <input type="text" class="form-control @error('name') is-invalid @enderror" id="exampleInputEmail1" placeholder="Category name"
                                 name="name" value="{{ $category->name }}">
                         </div>
                     </div>
+                    @error('name')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+
                     <!-- /.card-body -->
 
                     <div class="card-footer">

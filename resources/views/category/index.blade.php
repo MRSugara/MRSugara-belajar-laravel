@@ -29,13 +29,14 @@
                             <label for="exampleInputEmail1">Create Category</label>
                             <div class="d-flex justify-content-between">
 
-                                <input type="text" class="form-control mx-1" id="exampleInputEmail1" placeholder="name"
+                                <input type="text" class="form-control mx-1 @error('name') is-invalid @enderror" id="exampleInputEmail1" placeholder="name"
                                     name="name">
                                 <button type="submit" class="btn btn-primary mx-1">Submit</button>
                             </div>
+                            @error('name')
+                            <small class="text-danger">{{ $message }}</small>
+                            @enderror
                         </div>
-
-
                     </div>
                     <!-- /.card-body -->
                 </form>
