@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LandingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +20,16 @@ use App\Http\Controllers\DashboardController;
 */
 
 
+Route::get('/',[LandingController::class, 'index'])->name('landing');
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::post('/login', [LoginController::class,'authenticate'])->name('login.authenticate');
 Route::get('/register', [RegisterController::class,'index'])->name('register');
 Route::post('/register', [RegisterController::class,'store'])->name('register.store');
-
 Route::middleware('auth')->group(function (){
 
     Route::post('/logout', [LoginController::class,'logout'])->name('logout');
 
-    Route::get('/',[DashboardController::class, 'index']);
+    Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/product',[ProductController::class, 'index'])->name('product');
     Route::get('/product/chart', [ProductController::class, 'chart'])->name('product.chart');
