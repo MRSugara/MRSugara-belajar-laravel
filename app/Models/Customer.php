@@ -17,7 +17,7 @@ class Customer extends Model
             'address',
             'is_active'
     ]);
-        public function Sale(){
+        public function sales(){
         return $this->hasMany(Product::class);
         }
 }

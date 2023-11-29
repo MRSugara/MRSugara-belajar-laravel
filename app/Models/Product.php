@@ -19,16 +19,16 @@ class Product extends Model
         'stock',
         'image'
     ];
-    public function Category(){
+    public function category(){
         return $this->belongsTo(Category::class);
     }
-    public function PurchaseDetail(){
+    public function purchaseDetails(){
         return $this->hasMany(PurchaseDetail::class);
     }
-    public function SaleDetail(){
+    public function saleDetails(){
         return $this->belongsTo(SaleDetail::class);
     }
-    public function ProductCirculation(){
+    public function oroductCirculation(){
         return $this->belongsTo(ProductCirculation::class);
     }
 }

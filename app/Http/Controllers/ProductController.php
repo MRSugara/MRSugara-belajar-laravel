@@ -19,6 +19,11 @@ class ProductController extends Controller
         $categories = Category::all();
         return view('product.index', compact('products', 'categories'), ['judul' => 'Product']);
     }
+        public function chart()
+    {
+        $products = Product::all();
+        return view('product.chart',  ['judul' => 'Product']);
+    }
 
     /**
      * Show the form for creating a new resource.
