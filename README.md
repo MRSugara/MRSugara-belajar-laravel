@@ -7,4 +7,4 @@ B. Untuk Design database, terdapat relasi many to many antara produk dan kategor
 ![Screenshot 2023-11-29 190724](https://github.com/MRSugara/MRSugara-belajar-laravel/assets/113565758/0e8b5749-7b0b-47e0-985c-e0429a560024)
 C. Dibawah ini adalah screenshot dari project yang saya buat
 ![Screenshot 2023-11-29 125650](https://github.com/MRSugara/MRSugara-belajar-laravel/assets/113565758/2d071c8f-0608-4a2e-9938-dc28c63cd2ac)
-D. Depedensi yang saya gunakan pada project kali ini adalah composer, highchart, dataTable, composer dan postman.
+D. Depedensi yang saya gunakan pada project kali ini adalah highchart, dataTable, bootstrap, adminLTE dan postman.
