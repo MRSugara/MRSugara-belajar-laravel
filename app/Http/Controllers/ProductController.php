@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -18,11 +19,6 @@ class ProductController extends Controller
         $products = Product::all();
         $categories = Category::all();
         return view('product.index', compact('products', 'categories'), ['judul' => 'Product']);
-    }
-        public function chart()
-    {
-        $products = Product::all();
-        return view('product.chart',  ['judul' => 'Product']);
     }
 
     /**

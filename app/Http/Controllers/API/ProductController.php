@@ -40,7 +40,7 @@ class ProductController extends Controller
         {
             $validate = Validator::make($request->all(),[
             'name' => 'required|string',
-            'category' => 'required',
+            'category_id' => 'required',
             'product_code' => 'required|unique:products,product_code,',
             'description' => 'required',
             'price' => 'required',
@@ -73,7 +73,7 @@ class ProductController extends Controller
     public function update(Request $request, $id){
         $validate = Validator::make($request->all(),[
             'name' => 'required|string',
-            'category' => 'required',
+            'category_id' => 'required',
             'product_code' => 'required|unique:products,product_code,'. $id.',id',
             'description' => 'required',
             'price' => 'required',

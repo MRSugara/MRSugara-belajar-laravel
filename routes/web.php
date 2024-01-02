@@ -19,12 +19,12 @@ use App\Http\Controllers\LandingController;
 |
 */
 
-
 Route::get('/',[LandingController::class, 'index'])->name('landing');
 Route::get('/login', [LoginController::class,'index'])->name('login');
 Route::post('/login', [LoginController::class,'authenticate'])->name('login.authenticate');
 Route::get('/register', [RegisterController::class,'index'])->name('register');
 Route::post('/register', [RegisterController::class,'store'])->name('register.store');
+
 Route::middleware('auth')->group(function (){
 
     Route::post('/logout', [LoginController::class,'logout'])->name('logout');
@@ -32,7 +32,6 @@ Route::middleware('auth')->group(function (){
     Route::get('/dashboard',[DashboardController::class, 'index'])->name('dashboard');
 
     Route::get('/product',[ProductController::class, 'index'])->name('product');
-    Route::get('/product/chart', [ProductController::class, 'chart'])->name('product.chart');
 
     Route::get('/product/create',[ProductController::class, 'create'])->name('product.create');
     Route::post('/product',[ProductController::class, 'store'])->name('product.store');

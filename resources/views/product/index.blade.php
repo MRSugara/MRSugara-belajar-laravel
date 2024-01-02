@@ -69,11 +69,11 @@
 
                                         <form action="{{ route('product.destroy', ['id' => $product->id]) }}"
                                             method="post">
+                                            @csrf
                                             <a href="{{ route('product.edit', ['id' => $product->id]) }}"
                                                 class="btn btn-warning btn-sm"
                                                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"><span
                                                     data-feather="edit" width="17px" height="17px"></span> </a>
-                                            @csrf
                                             <button class="btn btn-danger btn-sm"
                                                 style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"><span
                                                     data-feather="trash-2" width="17px"height="17px"></span></button>
